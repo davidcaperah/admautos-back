@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VehiculosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/vehiculos',[VehiculosController::class,'index']);
+Route::post('/vehiculos',[VehiculosController::class,'store']);
+Route::put('/vehiculos/{id}',[VehiculosController::class,'update']);
+Route::Delete('/vehiculos/{id}',[VehiculosController::class,'destroy']);
